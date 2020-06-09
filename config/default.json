@@ -1,0 +1,5 @@
+{
+  "port": 5000,
+  "jwtSecret": "shortlink json web token secret",
+  "mongoUri": "mongodb+srv://admin:admin@cluster0-wjd69.azure.mongodb.net/app?retryWrites=true&w=majority"
+}
