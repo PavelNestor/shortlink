@@ -1,0 +1,25 @@
+@import '~materialize-css/dist/css/materialize.min.css';
+
+/* helpers */
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* toast */
+.toast-success {
+  background-color: #b2ff59;
+  color: #212121;
+}
+
+.toast-error {
+  background-color: #ff5252;
+  color: #212121;
+}
