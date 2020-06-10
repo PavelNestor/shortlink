@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { InputField, Button } from '../components';
@@ -8,9 +8,14 @@ import { AuthContext } from '../context/AuthContext';
 export const CreatePage = () => {
   const history = useHistory();
   const auth = useContext(AuthContext);
-  const { loading, request } = useHttp();
+  const { clearError, error, loading, request } = useHttp();
   const [link, setLink] = useState('');
   const toast = useToast();
+
+  useEffect(() => {
+    toast({ error: true, text: error });
+    clearError();
+  }, [clearError, error, toast]);
 
   const handleChange = ({ target: { value } }) => {
     setLink(value);
@@ -24,15 +29,13 @@ export const CreatePage = () => {
         from: link,
       },
       { Authorization: `Bearer ${auth.token}` }
-    )
-      .then((data) => {
-        setLink('');
-        if (data) {
-          toast({ text: data?.message });
-          history.push(`/detail/${data?.link?._id}`);
-        }
-      })
-      .catch((error) => toast({ error: true, text: error }));
+    ).then((data) => {
+      setLink('');
+      if (data) {
+        toast({ text: data?.message });
+        history.push(`/detail/${data?.link?._id}`);
+      }
+    });
   };
 
   return (
