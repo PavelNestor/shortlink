@@ -1,13 +1,17 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import '~materialize-css/dist/css/materialize.min.css';
+
+/* helpers */
+.ml-1 {
+  margin-left: 1rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* toast */
+.toast-success {
+  background-color: #b2ff59;
+  color: #212121;
+}
+
+.toast-error {
+  background-color: #ff5252;
+  color: #212121;
 }

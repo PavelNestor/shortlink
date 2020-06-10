@@ -8,6 +8,8 @@ const MONGO_URI = config.get('mongoUri') || '';
 
 const app = express();
 
+app.use(express.json({ extended: true }));
+
 app.use('/api/auth', authRout);
 
 const start = async () => {
