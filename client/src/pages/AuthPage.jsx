@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 
 import { Button, InputField, Row } from '../components';
 import { useHttp, useToast } from '../hooks';
-import { useEffect } from 'react';
+import { AuthContext } from '../context/AuthContext';
 
 export const AuthPage = () => {
+  const auth = useContext(AuthContext);
   const { clearError, error, loading, request } = useHttp();
   const toast = useToast();
   const [form, setForm] = useState({
@@ -27,6 +28,12 @@ export const AuthPage = () => {
     );
   };
 
+  const handleLogin = async () => {
+    request('api/auth/login', 'POST', { ...form }).then((data) =>
+      auth.login(data?.token, data?.userId)
+    );
+  };
+
   return (
     <div className='row'>
       <div className='col s6 offset-s3'>
@@ -46,6 +53,7 @@ export const AuthPage = () => {
                     name='email'
                     onChange={handleChange}
                     type='email'
+                    value={form.email}
                   />
                 </Row>
 
@@ -57,13 +65,19 @@ export const AuthPage = () => {
                     name='password'
                     onChange={handleChange}
                     type='password'
+                    value={form.password}
                   />
                 </Row>
               </form>
             </Row>
           </div>
           <div className='card-action'>
-            <Button accent disabled={loading} text='Login' />
+            <Button
+              accent
+              disabled={loading}
+              onClick={handleLogin}
+              text='Login'
+            />
 
             <Button
               className='ml-1'
