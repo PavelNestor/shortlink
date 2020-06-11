@@ -23,7 +23,6 @@ export const DetailPage = () => {
   if (loading) {
     return <Loader />;
   }
-  console.log('link', link);
 
   return link && <LinkCard link={link} />;
 };

@@ -3,17 +3,16 @@ import React from 'react';
 import { Link } from '../Link/Link';
 
 export const LinkCard = ({ link: { clicks, date, from, to } }) => {
-  console.log('clicks', clicks);
   return (
     <>
       <h2>Link</h2>
 
       <p>
-        Link: <Link href={to} text={to} target='_blank' />
+        Link: <Link href={to} text={to} target='_blank' rel='noopener noreferrer'/>
       </p>
 
       <p>
-        Short Link: <Link href={from} text={from} target='_blank' />
+        Short Link: <Link href={from} text={from} target='_blank' rel='noopener noreferrer'/>
       </p>
 
       <p>
