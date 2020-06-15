@@ -1,0 +1,10 @@
+short link TODO-list:
+
+  - change css to scss
+  - change path to component with alias
+  - separate login and register
+  - refresh token
+  - conect login with social media
+  - work with design
+
+  - deploy
