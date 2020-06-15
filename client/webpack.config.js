@@ -49,6 +49,13 @@ module.exports = {
   devServer: {
     hot: isDevelopment,
     port: 3000,
+    historyApiFallback: true,
+    proxy: {
+      '/api': {
+        changeOrigin: true,
+        target: 'http://localhost:5000',
+      },
+    },
   },
   devtool: isDevelopment ? 'source-map' : '',
   entry: {
