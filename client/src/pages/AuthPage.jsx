@@ -24,12 +24,12 @@ export const AuthPage = () => {
 
   const handleRegister = async () => {
     request('api/auth/register', 'POST', { ...form }).then(
-      (data) => data && toast({ text: data.message })
+      data => data && toast({ text: data.message })
     );
   };
 
   const handleLogin = async () => {
-    request('api/auth/login', 'POST', { ...form }).then((data) =>
+    request('api/auth/login', 'POST', { ...form }).then(data =>
       auth.login(data?.token, data?.userId)
     );
   };
@@ -74,10 +74,13 @@ export const AuthPage = () => {
           <div className='card-action'>
             <Button
               accent
+              className='mr-1'
               disabled={loading}
               onClick={handleLogin}
               text='Login'
             />
+
+            <span>or</span>
 
             <Button
               className='ml-1'

@@ -1,8 +1,6 @@
 short link TODO-list:
 
-  - separate login and register
-  - refresh token
-  - conect login with social media
+  - conect login with social media (Auth0)
   - work with design
   - add tests
 

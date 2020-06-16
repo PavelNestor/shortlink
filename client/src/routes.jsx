@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { AuthPage, CreatePage, DetailPage, LinksPage } from '@/pages';
+import { LandingPage } from './pages';
 
 export const useRoutes = (isAuthenticated) => {
   return isAuthenticated ? (
@@ -22,8 +23,12 @@ export const useRoutes = (isAuthenticated) => {
     </Switch>
   ) : (
     <Switch>
-      <Route path='/' exact>
+      <Route path='/login' exact>
         <AuthPage />
+      </Route>
+
+      <Route path='/' exact>
+        <LandingPage />
       </Route>
 
       <Redirect to='/' />

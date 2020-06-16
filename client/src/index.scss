@@ -5,8 +5,17 @@
   margin-left: 1rem;
 }
 
+.mr-1 {
+  margin-right: 1rem;
+}
+
 .flex {
   display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
 
 .justify-center {

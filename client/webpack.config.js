@@ -47,6 +47,9 @@ const cssLoaders = (preprocessor = '') => {
 
 module.exports = {
   devServer: {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     historyApiFallback: true,
     hot: isDevelopment,
     port: 3000,
@@ -105,12 +108,14 @@ module.exports = {
     new CleanWebpackPlugin(),
 
     // TODO Copy assets
-    // new CopyWebpackPlugin([
-    //   {
-    //     from: 'public/favicon.ico',
-    //     to: 'dist/',
-    //   },
-    // ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public/images', to: 'images' },
+        { from: 'public/manifest.json', to: 'manifest.json' },
+        { from: 'public/browserconfig.xml', to: 'browserconfig.xml' },
+        { from: 'public/robots.txt', to: 'robots.txt' },
+      ],
+    }),
 
     new HTMLWebpackPlugin({
       filename: './index.html',

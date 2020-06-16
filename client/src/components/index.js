@@ -1,4 +1,5 @@
 export { Button } from './Buttons/Button';
+export { Column } from './Grid/Column';
 export { Flex } from './Grid/Flex';
 export { JustifyCenter } from './Grid/JustifyCenter';
 export { InputField } from './Inputs/InputField';
