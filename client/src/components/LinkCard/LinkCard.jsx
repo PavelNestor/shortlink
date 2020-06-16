@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from '../Link/Link';
+import { Link } from '@/components/Link/Link';
 
 export const LinkCard = ({ link: { clicks, date, from, to } }) => {
   return (
@@ -8,11 +8,18 @@ export const LinkCard = ({ link: { clicks, date, from, to } }) => {
       <h2>Link</h2>
 
       <p>
-        Link: <Link href={to} text={to} target='_blank' rel='noopener noreferrer'/>
+        Link:{' '}
+        <Link href={to} text={to} target='_blank' rel='noopener noreferrer' />
       </p>
 
       <p>
-        Short Link: <Link href={from} text={from} target='_blank' rel='noopener noreferrer'/>
+        Short Link:{' '}
+        <Link
+          href={from}
+          text={from}
+          target='_blank'
+          rel='noopener noreferrer'
+        />
       </p>
 
       <p>

@@ -47,21 +47,26 @@ const cssLoaders = (preprocessor = '') => {
 
 module.exports = {
   devServer: {
+    historyApiFallback: true,
     hot: isDevelopment,
     port: 3000,
-    historyApiFallback: true,
     proxy: {
       '/api': {
         changeOrigin: true,
         target: 'http://localhost:5000',
       },
     },
+    publicPath: '/',
   },
+
   devtool: isDevelopment ? 'source-map' : '',
+
   entry: {
     main: ['@babel/polyfill', './src/index.js'],
   },
+
   mode: 'development',
+
   module: {
     rules: [
       {
@@ -87,11 +92,15 @@ module.exports = {
       },
     ],
   },
+
   optimization: optimization(),
+
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
+
   plugins: [
     new CleanWebpackPlugin(),
 
@@ -116,12 +125,14 @@ module.exports = {
       filename: filename('css'),
     }),
   ],
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
     extensions: ['.js', '.jsx', '.scss'],
   },
+
   watchOptions: {
     poll: 500,
     ignored: ['node_modules/**', 'dist/**'],

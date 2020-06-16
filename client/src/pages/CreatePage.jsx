@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { InputField, Button } from '../components';
-import { useHttp, useToast } from '../hooks';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '@/context/AuthContext';
+import { InputField, Button } from '@/components';
+import { useHttp, useToast } from '@/hooks';
 
 export const CreatePage = () => {
   const history = useHistory();

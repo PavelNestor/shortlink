@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 
-import { Button, InputField, Row } from '../components';
-import { useHttp, useToast } from '../hooks';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '@/context/AuthContext';
+import { Button, InputField, Row } from '@/components';
+import { useHttp, useToast } from '@/hooks';
 
 export const AuthPage = () => {
   const auth = useContext(AuthContext);

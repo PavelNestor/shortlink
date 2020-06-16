@@ -1,8 +1,9 @@
 import React, { useState, useCallback, useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useHttp } from '../hooks';
-import { AuthContext } from '../context/AuthContext';
-import { LinkCard, Loader } from '../components';
+
+import { AuthContext } from '@/context/AuthContext';
+import { LinkCard, Loader } from '@/components';
+import { useHttp } from '@/hooks';
 
 export const DetailPage = () => {
   const { request, loading } = useHttp();
@@ -13,7 +14,7 @@ export const DetailPage = () => {
   const getLink = useCallback(async () => {
     request(`/api/link/${linkId}`, 'GET', null, {
       Authorization: `Bearer ${token}`,
-    }).then((data) => data && setLink(data));
+    }).then(data => data && setLink(data));
   }, [linkId, request, token]);
 
   useEffect(() => {
