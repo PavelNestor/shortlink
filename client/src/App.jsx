@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { useRoutes } from './routes';
-import { useAuth } from './hooks/auth.hook';
-import { AuthContext } from './context/AuthContext';
+import { useRoutes } from '@/routes';
+import { useAuth } from '@/hooks/auth.hook';
+import { AuthContext } from '@/context/AuthContext';
 import { Loader, Navbar } from '@/components';
 
 import 'materialize-css';

@@ -1,5 +1,6 @@
 import React from 'react';
-import { JustifyCenter } from '../Grid/JustifyCenter';
+
+import { JustifyCenter } from '@/components/Grid/JustifyCenter';
 
 export const Loader = () => {
   return (

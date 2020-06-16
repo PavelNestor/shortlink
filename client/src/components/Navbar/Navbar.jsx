@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { Link } from '../';
-import { AuthContext } from '../../context/AuthContext';
+import { AuthContext } from '@/context/AuthContext';
+import { Link } from '@/components';
 
 export const Navbar = () => {
   const auth = useContext(AuthContext);
-  const handleLogout = (event) => {
+  const handleLogout = event => {
     event.preventDefault();
     auth.logout();
   };
