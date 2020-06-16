@@ -120,7 +120,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.scss'],
   },
   watchOptions: {
     poll: 500,
