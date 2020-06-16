@@ -14,12 +14,14 @@
 }
 
 /* toast */
-.toast-success {
-  background-color: #b2ff59;
-  color: #212121;
-}
+.toast {
+  &-success {
+    background-color: #b2ff59;
+    color: #212121;
+  }
 
-.toast-error {
-  background-color: #ff5252;
-  color: #212121;
+  &-error {
+    background-color: #ff5252;
+    color: #212121;
+  }
 }
